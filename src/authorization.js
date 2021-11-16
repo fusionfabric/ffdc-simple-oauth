@@ -16,6 +16,9 @@ class Authorization {
         this.refresh_expires_in = -1;
         this.token = "empty";
     }
+    setCallback(curCallback) {
+        this.callback = curCallback;
+    }
 
     getURL() {
         var myurl = this.authurl+"?client_id="+

@@ -18,6 +18,8 @@ app.use(CORS());
 
 app.get('/api/b2c/login',(req, res) => {
     // Redirecting to the right URL
+    var curCallback = req.protocol+"://"+req.get('host')+"/callback";
+    B2C.setCallback(curCallback);
     var URL = B2C.getURL();
     res.redirect(URL);
 })
